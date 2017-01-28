@@ -1,16 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700|Raleway');
+
 // bower:scss
 // endbower
 
 // import other sass files
 @import "variables";
+@import "typography";
 @import "media-queries";
 
 body {
   margin: 0;
   padding: 0;
   background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
   color: #333;
+}
+
+p {
+  max-width:30em;
 }
 
 .browserupgrade {
@@ -22,10 +30,10 @@ body {
 
 header {
   background: #777;
-  width: 100%;
   display: flex;
   justify-content:space-between;
   align-items: center;
+  padding: 2em 5em;
 
   ul {
     display: flex;
@@ -47,10 +55,24 @@ main {
   background: #CCCCCC;
   display: flex;
   flex-direction: column;
-  align-items: center;
 
-  .reversed {
-    align-self: flex-end;
+  section {
+    display: flex;
+    flex-direction: column;
+    padding:2em 5em;
+
+    &.hero {
+      align-items: center;
+    }
+
+    &.reversed {
+      h3, p {
+        align-self: flex-end;
+      }
+
+      p {
+        text-align: right;
+      }
+    }
   }
-
 }

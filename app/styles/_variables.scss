@@ -1,2 +1,15 @@
-// colors
-$primary-color: red;
+//@import url('https://fonts.googleapis.com/css?family=Arsenal:400,700');
+
+// text section
+$text-color: #333;
+$headings-color: #111;
+
+$link-color: #993;
+$link-hover-color: saturate(#993, 20%);
+$link-visited-color: green;
+
+$base-font-family: 'Raleway', sans-serif;
+$base-font-size: 1.2em;
+
+$heading-font-family: 'Lora', serif;
+$heading-font-weight: 700;
