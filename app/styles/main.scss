@@ -19,6 +19,7 @@ body {
 
 p {
   max-width:30em;
+  line-height: $base-font-size * 1.5;
 }
 
 .browserupgrade {
