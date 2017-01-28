@@ -3,28 +3,14 @@
 
 // import other sass files
 @import "variables";
+@import "media-queries";
 
 body {
+  margin: 0;
+  padding: 0;
   background: #fafafa;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
-}
-
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
 }
 
 .browserupgrade {
@@ -34,6 +20,37 @@ body {
   padding: 0.2em 0;
 }
 
-.box {
-  background: red;
+header {
+  background: #777;
+  width: 100%;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+
+  ul {
+    display: flex;
+    padding:0;
+    list-style-type: none;
+
+    li {
+
+      a {
+        text-decoration: none;
+        color: white;
+        padding:10px;
+      }
+    }
+  }
+}
+
+main {
+  background: #CCCCCC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .reversed {
+    align-self: flex-end;
+  }
+
 }
