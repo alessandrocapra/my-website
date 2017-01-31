@@ -6,7 +6,6 @@
 // import other sass files
 @import "variables";
 @import "typography";
-@import "media-queries";
 
 body {
   margin: 0;
@@ -22,6 +21,19 @@ p {
   line-height: $base-font-size * 1.5;
 }
 
+a {
+  text-decoration: none;
+  border-radius: 5px;
+  color: #fff;
+  padding:.2em;
+  background: rgba(0,0,0,0.2);
+  transition: .2s all;
+}
+
+a:hover {
+  background: rgba(0,0,0,0.5);
+}
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -30,23 +42,40 @@ p {
 }
 
 header {
-  background: #777;
+  background: rgba(255,255,255,0.2);
+  
   display: flex;
   justify-content:space-between;
   align-items: center;
-  padding: 2em 5em;
 
-  ul {
-    display: flex;
-    padding:0;
+  // override the justify-content: center of the parent
+  // margin-bottom:auto;
+
+  nav ul {
     list-style-type: none;
+    padding-left: 0;
+    padding-right:1em;
+    display: flex;
 
     li {
 
       a {
+        display: block;
+        background: none;
+        color: rgba(0,0,0,0.8);
+        position: relative;
+        padding:0.5em 2em;
         text-decoration: none;
-        color: white;
-        padding:10px;
+        text-shadow: none;
+        font-weight:700;
+
+        &:hover {
+          background: none;
+          border-bottom: 10px solid rgba(66,183,57,0.7);
+          border-radius: 0;
+          animation: bounce-up 2s infinite ease-in-out;
+        }
+
       }
     }
   }
@@ -55,27 +84,88 @@ header {
 main {
   background: #CCCCCC;
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
 
   section {
+    padding:4em;
+    min-height:50vh;
+
     display: flex;
-    flex-direction: column;
-    padding:2em 5em;
+    flex-direction:column;
+    //justify-content:center;
+
+    &:not(.hero) > * {
+      background: rgba(255,255,255, 0.8);
+      padding: .5em 1em;
+    }
+
+    // give same background properties to images of the sections
+    background: #000 no-repeat center;
+    background-size:cover;
 
     &.hero {
-      align-items: center;
-      height:75vh;
-      background: #2b81af;
+      padding:0;
+      height: 100vh;
+      text-align: center;
+      color: #fff;
+      text-shadow: 5px 5px rgba(0,0,0,0.5);
+      background: url('/images/poker.jpg');
+      background-position: bottom center;
+      background-size:cover;
+
+      #hero-text {
+        //padding-bottom:2em;
+      }
+
+    }
+
+    &#values {
+      background: url("/images/snow.jpg");
+      background-size:cover;
+
+      // for the parallax effect
+      background-attachment: fixed;
+    }
+    
+    &#users {
+      background: url("/images/users.jpg");
+      background-size:cover;
+    }
+    
+    &#webdev {
+      background: url("/images/code.jpg");
+      background-size:cover;
+
+      // for the parallax effect
+      background-attachment: fixed;
     }
 
     &.reversed {
-      h3, p {
-        align-self: flex-end;
-      }
+      align-items:flex-end;
 
-      p {
+      h3 {
         text-align: right;
       }
     }
   }
 }
+
+footer {
+  padding:4em;
+
+  h4 {
+    text-align: center;
+  }
+}
+
+
+/* Animations in CSS3 */
+@keyframes bounce-up {
+  0%   {bottom:5px;}
+  25%  {bottom:10px;}
+  50%  {bottom:5px;}
+  75%  {bottom:10px;}
+  100% {bottom:5px;}
+}
+
+@import "media-queries";

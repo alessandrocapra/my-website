@@ -1,9 +1,40 @@
-@media screen and (min-width: 768px){
-  /*header nav ul {
-       display: flex;
+// Media queries for mobile
 
-       li {
-         flex: 1 1 0;
-       }
-  }*/
+@media only screen and (max-width: 320px) {
+
+  // typography
+  html {
+    font-size:0.5em;
+  }
+
+  // content
+  img.logo {
+    width: 100%;
+  }
+
+  header {
+    flex-wrap: wrap;
+
+    & > * {
+      flex-basis: 100%;
+    }
+
+    nav ul {
+      padding-right: 0;
+
+      li {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+
+        a {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  main section {
+    flex-basis:100%;
+  }
 }
