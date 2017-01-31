@@ -114,7 +114,7 @@ main {
       background-size:cover;
 
       #hero-text {
-        //padding-bottom:2em;
+        padding-top:4em;
       }
 
     }
@@ -138,6 +138,11 @@ main {
 
       // for the parallax effect
       background-attachment: fixed;
+    }
+
+    &#questions {
+      background: url("/images/questions.jpg");
+      background-size: cover;
     }
 
     &.reversed {
