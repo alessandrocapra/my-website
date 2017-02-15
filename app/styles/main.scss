@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lora:400,700|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700|Raleway:400,700');
 
 // bower:scss
 // endbower
@@ -6,6 +6,9 @@
 // import other sass files
 @import "variables";
 @import "typography";
+
+// import code for other pages
+@import "projects";
 
 body {
   margin: 0;
@@ -27,11 +30,28 @@ a {
   color: #fff;
   padding:.2em;
   background: rgba(0,0,0,0.2);
-  transition: .2s all;
+  transition: .4s all;
+  
+  &.button {
+    display: block;
+    padding:2em;
+    text-align: center;
+    font-size:$base-font-size * .8;
+    text-transform: uppercase;
+    font-weight:700;
+    background: black;
+    color: black;
+
+    &:hover {
+      background: rgba(0,0,0,0.4);
+      color: #fff;
+    }
+  }
 }
 
 a:hover {
   background: rgba(0,0,0,0.5);
+  text-decoration: none;
 }
 
 .browserupgrade {
@@ -92,11 +112,24 @@ main {
 
     display: flex;
     flex-direction:column;
+    align-items:flex-start;
     //justify-content:center;
+
+    h3, p {
+      padding:1em;
+      font-weight:700;
+    }
+
+    h3 {
+      margin-bottom:.5em;
+    }
+
+    p {
+      font-size:$base-font-size * .8;
+    }
 
     &:not(.hero) > * {
       background: rgba(255,255,255, 0.8);
-      padding: .5em 1em;
     }
 
     // give same background properties to images of the sections
@@ -104,6 +137,11 @@ main {
     background-size:cover;
 
     &.hero {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content:center;
+
       padding:0;
       height: 100vh;
       text-align: center;
@@ -112,6 +150,10 @@ main {
       background: url('/images/poker.jpg');
       background-position: bottom center;
       background-size:cover;
+
+      header {
+        flex:1;
+      }
 
       #hero-text {
         padding-top:4em;
@@ -128,8 +170,8 @@ main {
     }
     
     &#users {
-      background: url("/images/users.jpg");
-      background-size:cover;
+      /*background: url("/images/users.jpg");
+      background-size:cover;*/
     }
     
     &#webdev {
@@ -141,9 +183,19 @@ main {
     }
 
     &#questions {
-      background: url("/images/questions.jpg");
-      background-size: cover;
+      background: rgb(79, 165, 82);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      & > a {
+        flex-basis: calc(50% - 2em);
+        margin: 1em;
+      }
     }
+
+
 
     &.reversed {
       align-items:flex-end;
